@@ -1,0 +1,12 @@
+{
+  "name": "text-to-shx-images",
+  "version": "1.0.0",
+  "description": "将文本+图片生成小红书风格图片的 Skill，通过 HTML 排版后截图输出",
+  "type": "module",
+  "scripts": {
+    "render": "node scripts/render.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
