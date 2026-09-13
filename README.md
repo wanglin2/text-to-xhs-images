@@ -21,7 +21,7 @@
 帮我安装 text-to-xhs-images 这个 skill。请执行以下步骤：
 
 1. 确保 ~/.claude/skills/ 目录存在（不存在就创建）
-2. 执行 git clone https://github.com/wanglin25/text-to-xhs-images.git ~/.claude/skills/text-to-xhs-images
+2. 执行 git clone https://github.com/wanglin2/text-to-xhs-images ~/.claude/skills/text-to-xhs-images
 3. 进入目录执行 npm install
 4. 验证安装：node scripts/render.mjs 应该显示用法说明
 5. 告诉我装好了，之后我说"做小红书图片"就会触发这个 skill
@@ -61,7 +61,7 @@
 **Claude Code 用户：**
 ```text
 帮我安装 text-to-xhs-images skill。请执行：
-1. git clone https://github.com/wanglin25/text-to-xhs-images.git ~/.claude/skills/text-to-xhs-images
+1. git clone https://github.com/wanglin2/text-to-xhs-images ~/.claude/skills/text-to-xhs-images
 2. cd ~/.claude/skills/text-to-xhs-images && npm install
 3. 验证：node scripts/render.mjs
 ```
@@ -69,7 +69,7 @@
 **Cursor / 其他本地 Agent 用户：**
 ```text
 帮我安装 text-to-xhs-images skill。请执行：
-1. git clone https://github.com/wanglin25/text-to-xhs-images.git .cursor/skills/text-to-xhs-images
+1. git clone https://github.com/wanglin2/text-to-xhs-images .cursor/skills/text-to-xhs-images
    （或其他你的 skill 目录）
 2. cd 到该目录并执行 npm install
 3. 验证：node scripts/render.mjs
@@ -79,7 +79,7 @@
 
 ```bash
 # Claude Code
-git clone https://github.com/wanglin25/text-to-xhs-images.git ~/.claude/skills/text-to-xhs-images
+git clone https://github.com/wanglin2/text-to-xhs-images ~/.claude/skills/text-to-xhs-images
 cd ~/.claude/skills/text-to-xhs-images
 npm install
 
@@ -278,7 +278,7 @@ Tell your AI assistant:
 
 ```text
 Install text-to-xhs-images skill:
-1. git clone https://github.com/wanglin25/text-to-xhs-images.git ~/.claude/skills/text-to-xhs-images
+1. git clone https://github.com/wanglin2/text-to-xhs-images ~/.claude/skills/text-to-xhs-images
 2. cd ~/.claude/skills/text-to-xhs-images && npm install
 3. Verify: node scripts/render.mjs
 ```
@@ -308,7 +308,7 @@ Style: Minimal, blue color scheme
 ### Installation
 
 ```bash
-git clone https://github.com/wanglin25/text-to-xhs-images.git ~/.claude/skills/text-to-xhs-images
+git clone https://github.com/wanglin2/text-to-xhs-images ~/.claude/skills/text-to-xhs-images
 cd ~/.claude/skills/text-to-xhs-images
 npm install
 ```
