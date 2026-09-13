@@ -372,6 +372,43 @@ img {
 - 调整字体大小和间距
 - 使用更紧凑的布局
 
+### 6. 导出的 PNG 不是 1080x1440（实测踩坑）
+
+`render.mjs` 用 `fullPage: true` 截图，输出尺寸 = 文档实际尺寸。两个常见原因：
+
+**原因 A：装饰元素超出画布。**
+`position: absolute` 的装饰圆/色块写在 `body` 下并带负偏移（如 `right: -180px`），会把文档撑大（例如渲染成 1260x1600）。
+
+**解决：** 用一个裁剪容器包住装饰元素。
+
+```html
+<div class="bg"><div class="blob"></div></div>
+<style>
+  .bg { position: absolute; inset: 0; overflow: hidden; } /* 关键：裁剪 */
+</style>
+```
+
+**原因 B：图片被 flex 静默压缩裁切。**
+在 `display: flex; flex-direction: column` 的页面里，图片卡片会被 flex 压缩（默认 `flex-shrink: 1`），容器又设了 `overflow: hidden`，于是截图被裁掉一截却不报错。
+
+**解决：** 给图片卡片加 `flex: none;`，并把宽度调到放得下的尺寸。
+
+```css
+.shot { flex: none; margin-top: auto; align-self: center; width: 840px; }
+```
+
+### 7. 渲染后自检（推荐）
+
+渲染完后跑一遍自检，确认每页都是 1080x1440、且各区块底部不越界：
+
+```bash
+node scripts/check-overflow.mjs local-tests/<project-name>
+```
+
+输出中 `doc=[1080,1440]` 为正常，`OVERFLOW` 表示需要按上面两条排查。
+经验值：截图宽度 760~860px 比较安全（截图长宽比约 1:1 时，高度≈宽度×0.98），
+页面底部还需留出约 40px 呼吸空间。
+
 ## 依赖安装
 
 首次使用前，安装依赖：
